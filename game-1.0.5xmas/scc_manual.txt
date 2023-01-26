@@ -1,0 +1,215 @@
+A script consists of 3 different blocks:
+	
+	$level
+	$entity
+	$group
+
+where the $level block is mandatory, $entity and $group blocks are optional
+(but you will want to add some of these ;)).
+
+
+Each block has different components, some of them are required, some are
+optinal and some may only be present if others are not (XOR).
+
+$level:
+-------
+	
+	$title		- optinal
+	$bgm		- optinal
+	$duration	- required
+	$sky		- required
+
+$entity:
+--------
+
+	$spawntime		- required
+	$respawnperiod	- optinal (negative values will never respawn the entity;
+								if missing: also never respawn the entity)
+	$name			- required
+	$pos			- required
+	$dir			- XOR $aim
+	$aim			- XOR $dir
+	$speed			- optional (default: 0; only non-negative values allowed!)
+
+$group:
+--------
+
+	$spawntime		- required
+	$respawnperiod	- optinal
+	$pos			- required
+	$dir			- XOR $aim
+	$aim			- XOR $dir
+	$speed			- optional (default: 0; only non-negative values allowed!)
+	
+
+You can put several entities into a group, inheriting the group's components
+to each entity. The entity's components $spawntime, $pos, $dir, $aim and $speed
+will then be set -relative- to the group. I.e. say, you have a group $pos
+at "10 10 10" and set the $pos of one of the group's entities to "5 0 0" will
+cause the entity to appear at { 15, 10, 10 } in the world.
+
+Setting an entity's $spawntime to "2.0" while the surrounding group's 
+$spawntime is "10.0" will spawn this entity after 12 seconds.
+
+Same counts for $speed, $dir and $aim.
+
+NOTE on the $dir component: the vector assigned to this component does not
+  need to be normalized - it will be done for you.
+
+NOTE: groups inside are are not (yet) suppoerted, you might receive a parse
+  error.
+
+NOTE: you will receive warnings if optinal components are missing, but that
+  won't affect the compiler process
+
+
+following entities can be scripted:
+
+"chicken"
+"superchicken"
+"bombchicken"
+"egg"
+"ballon"
+"racer01"
+"racer02"
+"enemy-ship"
+"alien01"	// green
+"alien02"	// red
+"sonde"
+"satellit"
+"rakete"
+"astronaut"
+"komet"
+"p01"	// planet
+"p02"
+"p03"
+"p04"
+"p05"
+"p06"
+"p07"
+"skysphere01"
+"skysphere02"	// MODEL MISSING - CAN'T SPAWN!
+"skysphere03"	// MODEL MISSING - CAN'T SPAWN!
+"skysphere04"	// MODEL MISSING - CAN'T SPAWN!
+"skysphere05"	// MODEL MISSING - CAN'T SPAWN!
+"skysphere06"	// MODEL MISSING - CAN'T SPAWN!
+"skysphere07"	// MODEL MISSING - CAN'T SPAWN!
+
+------------------------------------------------------------------
+
+Usage:
+
+scc <script> [options]
+
+(type "scc" for command line options)
+
+Scc truncates the filename's extension and adds '.bin'.
+!! BEWARE: existing files will be overwritten without warning!!
+
+The output directory can be set via "-outdir <dir>" which must exist.
+
+If every is going fine, you won't get a message (i.e. "no news are good news" ;))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bugs Bunny needs carrots!

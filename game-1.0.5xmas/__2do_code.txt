@@ -1,0 +1,148 @@
+//===================================================
+// fps
+//===================================================
+
+- launcher: changing from "local highscore" to "internet highscore" tab
+            (or vise versa) displays the highscore of the last tab
+
+- highscore idea: if users have equal highscores, the latest one should
+                  be on top of all others. this ensures that users
+                  always strife to stay on top of the web high-score :)
+
+
+//===================================================
+// shadax
+//===================================================
+
+**********************************
+
+   X-MAS
+ =========
+
+-* need WP_SNOWBALL; this affects: 
+  -* g_missile.c:
+    -* need public Missile_FirePlasma()
+    -* need to emit snow flakes upon impact
+
+  -* g_weapon.c:
+    -* weaponinfo_t: shot period, muzzle positions, soundname (plasma ?)
+    
+  -* g_shared.h/.c: need MISSILE_SNOWBALL as CLASS_MISSILE
+
+- xmas_racer02 shall shoot snowballs (write FireSnowball() in g_missile.c 
+    and take care to check for player collision as well as slower movement;
+    also: emit not -blue-, but white particles upon player-collision)
+    (setting "gent->curweapon" to WP_SNOWBALL, which is yet missing, should
+     work then)
+
+-* xmas_tree: 
+  -* startup code, collision code; 
+    -* collision code: 
+      -* green particles for impact
+      -* green and color-changing particles for destruction
+        => IDEA: glitter would look cool. realisation: yellow particles, that
+               rapidly toggle the "sv->state" (active_e, passive_e) and make
+               these particles last longer than the dark-green ones.
+               NOTE: that would require to add new features to the particle
+                     module! also note that the particle's think() is already
+                     used by FadeAndFall(); maybe need to add native
+                     data to the gentity_t struct for particles:
+                      // in g_local.h: typedef enum { PART_FLICKER...} parteffect_t;
+                        parteffect_t effect; // color change, flicker, etc.
+                     => FadeAndFall() needs also needs to perform these
+                        shading effect besides fading and applying gravity
+
+               maybe also emit a few dark-red particles to represent the x-mas
+               balls, they might also want to flicker.
+
+  -* info in particle pain table
+     -* yellow particles on top of the tree (where the star resides)
+     -* brown particles at trunk stub
+     -* green particles everywhere else
+  -* NO ENTRY in killing score table (as the tree is neutral like comet)
+  -* entry in startup table
+
+-* xmas_santa:
+  -* startup code, collision code (both need an e_xmas_santa.c)
+  -* info in particle pain table; i think the area around rentiers should NOT
+    emit particles
+  -* entry in startup table; also: health
+  -* entry in killing score table is already done (but maybe change to -75 score)
+
+-* snowflakes:
+  -* point to an OnSvRemove() function which will be called if snowflakes
+     fall outside world sphere, so we can create a new snowflake
+
+**********************************
+ 
+
+
+-* damage on collision: entity-modules should not hold arrays of foes
+  (=> D_CheckForDamage() also affected)
+  -> G_InArray() might be obsolete
+
+-* distinct entity classes obsolete due to mainclass_t
+
+-* G_EntIsActive() is obsolete due to "gent->gstate == ES_ACTIVE"
+
+-* classinfo_t + GetClassInfoxxx functions
+
+-* G_Spawn + G_Free
+
+-* struct gentity_t: mainclass + subclass   replace   classid 
+ 
+-* gs_fade / action in run-frame functions:
+  "CL_UpdateHud(timeleft)" is obsolete if we make EC_OnHavingKilled() for
+  attacker == player  change his client's score text in HUD 
+
+-* Player_IsShaking <-> Player_Shake: since Player_Shake() will make a backup of
+                       think() and make it point elsewhere, we always have to
+                       check if player is already shaking. 
+                       BETTER: make Player_Shake() check if shaking and
+                               remove responsibilty from caller
+
+-* missile: bouncing off debris shall NOT depend on frame rate; slow machines would
+            move bounced missile too far away (even so far that the missles are outside world)
+
+-* client: wrong place for bonusweapon entity
+
+
+* gentity_t struct: keep track of available weapons (esp. for client's bonuswpn.)
+   (=> client: weapon selection gets easier: write EC_SelectNextWeapon(),
+       client::ChangeToWeapon() is then obsolete except for changing icon in hud)
+   
+
+-* camera should slip into client module
+
+* client: cockpitmodel and weaponmodel should become normal_e objects, like
+          arrowmodel; then, these 2 shall be transformed like arrowmodel
+          (be careful with the scaling factor, which is currenty quite small)
+
+-* entmanage: EM_SpawnModel,Text,...: all these should use EM_SpawnByClassInfo
+             instead of Spawn().
+
+-* entmanage / general: EM_EntitiesRunFrame() should be renamed to EM_RunFrame
+                       (just for conformity with other modules)
+
+* compile the release version under mingw32 and NOT cygwin
+  (also: in Makefile set RELEASE = 1)
+
+* engine: I want the entity_t struct to get a new func-pointer:
+            void (*setRenderAttribs)(entity_t *self);
+          which, if not NULL, gets called on each frame, just like think()
+          Motivation: since entities "fade in" after spawn their think()
+             points to a function that continuously changes their alpha-value;
+             currently, think() and nextthink are back-upped and abused for
+             fading in, but this is NOT the right way, since the may want 
+             to think, but can't until they totally faded in.
+
+----------------------------------------------------------------------------
+
+-* pause menu in own module
+
+-* the score table for killed entities -really- belongs to g_entchar.c and not
+  to g_shared.c
+
+* client <-> player interaction depends on too much global assumptions
+
+* ballon: shall turn correctly when being hit from back (by a homing shot for example)

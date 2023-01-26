@@ -1,0 +1,48 @@
+$level
+{
+	$title = "Extralevel"
+	$bgm = "sounds/ingame.wav"
+	$duration = "100.0"
+	$sky = "skysphere06"
+}
+
+// planet
+$entity
+{
+	$name="p06"
+	$spawntime="0"
+	$pos="300 40 -400"
+	$dir="0 0 1"
+	$speed="0"
+	$respawnperiod="-1"
+}
+
+$entity
+{
+	$name="motherchicken"
+	$spawntime="0"
+	$pos="20 50 -180"
+	$dir="1 0 -1"
+	$speed="0"
+	$respawnperiod="-1"
+}
+
+// SATTELIT, SONDE, KOMET CROSSOVER
+$entity
+{
+	$name="komet"
+	$spawntime="0"
+	$pos="-380 -80 -380"
+	$dir="1 0.5 0"
+	$speed="25"
+	$respawnperiod="80"
+}
+$entity
+{
+	$name="satellit"
+	$spawntime="40"
+	$pos="+380 -130 -380"
+	$dir="-1 0.51 0"
+	$speed="25"
+	$respawnperiod="80"
+}

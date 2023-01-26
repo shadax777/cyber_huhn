@@ -1,0 +1,4 @@
+- type: "bombchicken" must be named "bombe"
+
+- max/min position for entities: { 400 400 400 } / { -400 -400 -400 }
+  otherwise: they won't get spawned and a message will be written to the console

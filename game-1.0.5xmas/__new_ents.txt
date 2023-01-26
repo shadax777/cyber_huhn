@@ -1,0 +1,21 @@
+* new entities that can be used in the script:
+
+  neutral:
+    - "p08" (planet earth)
+    - "xmas_tree"
+  
+  enemies:
+    - "xmas_chicken"
+    - "xmas_racer01"
+    - "xmas_racer02"
+
+  friends:
+    - "xmas_santa" (-75 score penalty upon killing)
+
+* script version changed from 3 to 4
+  (try using old an script and see the game falling flat on its face ;))
+
+* script compiler now prints the current version number of scripts
+
+* btw: x-mas chicken kills count for the killing statistic to
+       get the bonus weapon

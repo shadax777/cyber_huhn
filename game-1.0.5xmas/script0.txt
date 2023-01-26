@@ -1,0 +1,117 @@
+$level
+{
+	$title = "Aufwärmen"	// not (yet) displayed
+	$bgm = "sounds/ingame.wav"	// music (will be looped)
+	$duration = "100.0"	// in seconds
+	$sky = "skysphere01"	// must be present or game code will abort
+}
+
+// planet
+$entity
+{
+	$name="p01"
+	$spawntime="0"		// spawn immediately after level starts
+	$pos="300 40 -400"
+	$dir="0 0 1"		// move direction - must NOT be set if $aim is set
+	$speed="0"		// moving speed; optional
+	$respawnperiod="-1"	// <0 = never respawn; optinal; if not set: never respawn
+	//$aim="200 40 -390"
+}
+
+
+// SATTELIT, SONDE, KOMET CROSSOVER
+$entity
+{
+	$name="sonde"
+	$spawntime="0"
+	$pos="-380 -80 -380"
+	$dir="1 0.5 0"
+	$speed="25"
+	$respawnperiod="80"
+}
+$entity
+{
+	$name="sonde"
+	$spawntime="40"
+	$pos="+380 -130 -380"
+	$dir="-1 0.51 0"
+	$speed="25"
+	$respawnperiod="80"
+}
+
+// CHICKENRUDEL
+$group
+{
+	$spawntime = "0"
+	$pos = "-300 10 -160"
+	$dir = "1 -0.05 0"
+	//$aim = "0 0 0"
+	$speed = "23"
+	$respawnperiod="12"	// <0 = never respawn
+	
+	$entity { $name="chicken" $pos="0    0  2" $spawntime="0.5" }
+	$entity { $name="chicken" $pos="20  20  -5" }
+	$entity { $name="chicken" $pos="-20 20  0" $spawntime="0.5" }
+	$entity { $name="racer02" $pos="15 -20  10" $spawntime="0.25" }
+}
+$group
+{
+	$spawntime = "5"
+	$pos = "-300 0 -100"
+	$dir = "1 -0.05 0"
+	//$aim = "0 0 0"
+	$speed = "27"
+	$respawnperiod="12"	// <0 = never respawn
+	
+	$entity { $name="chicken" $pos="0    0  2" $spawntime="0.5" }
+	$entity { $name="chicken" $pos="20  20  -5" }
+}
+$group
+{
+	$spawntime = "8"
+	$pos = "-300 50 -120"
+	$dir = "1 -0.05 0"
+	//$aim = "0 0 0"
+	$speed = "28"
+	$respawnperiod="12"	// <0 = never respawn
+	
+	//$entity { $name="chicken" $pos="0    0  8" $spawntime="0.5" }
+	$entity { $name="chicken" $pos="22  15  -5" }
+}
+$group
+{
+	$spawntime = "7"
+	$pos = "-300 10 -150"
+	$dir = "1 -0.05 0"
+	//$aim = "0 0 0"
+	$speed = "28"
+	$respawnperiod="12"	// <0 = never respawn
+	
+	$entity { $name="chicken" $pos="0    5  8" $spawntime="0.5" }
+	$entity { $name="chicken" $pos="22  -10  -10" }
+	$entity { $name="chicken" $pos="-10  -20  20" $spawntime="0.1" }
+}
+
+
+// ASTRONAUT
+$entity
+{
+	$name="astronaut"
+	$spawntime="10"
+	$pos="60 -120 -300"
+	$dir="-0.5 1 0"
+	$speed="7"
+	$respawnperiod="30"
+}
+
+
+// ++++++++++++++ RAKETE ++++++++++++++
+$entity
+{
+	$name="rakete"
+	$spawntime="15"
+	$pos = "400 -100 -100"
+	$aim = "-400 200 -400"
+	$speed="80"
+	$respawnperiod="80"
+}

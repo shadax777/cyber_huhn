@@ -1,0 +1,40 @@
+once we migrate to script v.4, all entitiy names will change; i.e. the
+current scripts need to be updated + freshly compiled
+the changes will be:
+
+
+- level version changed to 4
+
+- entity names in script changed even more:
+"superchicken"  => "enemy_superchicken"
+"bombe"         => "enemy_bombchicken"
+"motherchicken" => "enemy_motherchicken"
+"chicken"       => "enemy_chicken"
+"egg"           => "enemy_egg"
+"ballon"        => "enemy_balloon"
+"racer01"       => "enemy_racer01"
+"racer02"       => "enemy_racer02"
+"enemy-ship"    => "enemy_ship"
+"alien01"       => "friend_alien_green"
+"alien02"       => "friend_alien_red"
+"sonde"         => "friend_sonde"
+"satellit"      => "friend_satellite"
+"rakete"        => "friend_rocket"
+"astronaut"     => "friend_astronaut"
+"komet"         => "neutral_comet"
+"p01"           => "neutral_planet01"
+"p02"           => "neutral_planet02"
+"p03"           => "neutral_planet03"
+"p04"           => "neutral_planet04"
+"p05"           => "neutral_planet05"
+"p06"           => "neutral_planet06"
+"p07"           => "neutral_planet07"
+"skysphere01"   => "neutral_skysphere01"
+"skysphere02"   => "neutral_skysphere02"
+"skysphere03"   => "neutral_skysphere03"
+"skysphere04"   => "neutral_skysphere04"
+"skysphere05"   => "neutral_skysphere05"
+"skysphere06"   => "neutral_skysphere06"
+"skysphere07"   => "neutral_skysphere07"
+
+- motherchicken.dmo+dbb are obsolete now

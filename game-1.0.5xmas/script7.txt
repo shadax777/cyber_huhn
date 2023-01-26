@@ -1,0 +1,54 @@
+// - this is a sample script file; c.f. scc_manual.txt for more help
+// - only c++-style comments are supported
+// - compile with "scc script0.txt" -> produces "script0.bin"
+
+$level
+{
+	$title = "X-Mas: Bescherung :)"
+	$bgm = "sounds/ingame.wav"
+	$duration = "100"		// in seconds; this should be the time of the bgm
+	$sky = "skysphere01"	// must be present or game code will abort
+}
+
+// planet
+$entity
+{
+	$name="p08"
+	$spawntime="0"
+	$pos="-120 40 -399"
+	$dir = "1 0 0"
+	$speed="0"
+	$respawnperiod="-1"
+}
+
+
+// special santa
+$entity
+{
+	$name = "xmas_santa_special"
+	$spawntime = "0"
+	$pos="0 -60 -200"
+	$dir = "-1 0 0"
+	$speed = "30"
+	$respawnperiod = "-1"
+}
+
+
+// HACK
+// force entities emitted by special santa to get cached;
+// they will never appear in the world because they spawn long after the level is over
+$group
+{
+	$spawntime = "999"
+	$pos = "0 0 0"
+	$dir = "1 0 0"
+	$speed = "0"
+	$respawnperiod = "-1"
+
+	$entity { $name = "xmas_chicken" }
+	$entity { $name = "bombe" }
+	$entity { $name = "egg" }
+	$entity { $name = "xmas_tree" }
+	$entity { $name = "xmas_racer02" }
+	$entity { $name = "xmas_racer01" }
+}

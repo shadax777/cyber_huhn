@@ -1,0 +1,44 @@
+
+2002-10-05
+----------
+
+- pause menu: cursor no longer persistent; always freshly spawns when entering
+  pause
+
+- bugfix: missiles are crossing again (after 200 units)
+
+- prepared re-defined sot sounds:
+
+#define S_WEAPON_PLASMAGUN      "sounds/shot1.wav"
+#define S_WEAPON_GLIBBERGUN     "sounds/shot2.wav"
+#define S_WEAPON_HOMINGGUN      "sounds/shot3a.wav"
+#define S_MISSILE_HOMINGSHOT    "sounds/shot3b.wav"
+
+  // note: the model filenames did NOT change
+
+
+- missiles: scaled the models a bit down
+
+- missiles: new damages:
+  * plasma:         0.4
+  * glibber:        2.0
+  * homing capsule: 0.0 (will only emit homing shots upon collosion)
+  * homing shots:   5.0
+
+- GAME_INVERT_MOUSE implemented (only for action, of course)
+
+- alien sound playing now (for both, red + green alien)
+
+- animspeed set to 1.5 for chicken, superchicken and bombchicken
+  also: added some random value [0 .. 0.25] to animspeed
+
+- rocket plays looped sound now (rocket.wav)
+
+- enemy ship: positive score for killing + emits 4 bombhcikens (heading
+              towards player) upon destruction
+
+- fucking bug in homing missile code fixed
+
+- bonus weapon
+
+- racer02's plasma missiles hit + shake player

@@ -1,0 +1,235 @@
+$level
+{
+	$title = "Wasserplanet"
+	$bgm = "sounds/ingame.wav"	// music (will be looped)
+	$duration = "100.0"	// in seconds
+	$sky = "skysphere04"	// must be present or game code will abort
+}
+
+// planet
+$entity
+{
+	$name="p04"
+	$spawntime="0"		// spawn immediately after level starts
+	$pos="300 40 -400"
+	$dir="0 0 1"		// move direction - must NOT be set if $aim is set
+	$speed="0"		// moving speed; optional
+	$respawnperiod="-1"	// <0 = never respawn; optinal; if not set: never respawn
+	//$aim="200 40 -390"
+}
+
+
+// SATTELIT, SONDE, KOMET CROSSOVER
+$entity
+{
+	$name="satellit"
+	$spawntime="0"
+	$pos="-380 -80 -380"
+	$dir="1 0.5 0"
+	$speed="25"
+	$respawnperiod="80"
+}
+$entity
+{
+	$name="satellit"
+	$spawntime="40"
+	$pos="+380 -130 -380"
+	$dir="-1 0.51 0"
+	$speed="25"
+	$respawnperiod="80"
+}
+
+// ALIENS 01/02
+$entity
+{
+	$name="alien01"
+	$spawntime="0"
+	$pos="-380 -65 -10"
+	$dir="1 0.1 -0.5"
+	$speed="35"
+	$respawnperiod="40"
+}
+
+
+
+
+
+
+// CHICKENRUDEL
+$group
+{
+	$spawntime = "0"
+	$pos = "-300 10 -160"
+	$dir = "1 -0.05 0"
+	//$aim = "0 0 0"
+	$speed = "20"
+	$respawnperiod="12"	// <0 = never respawn
+	
+	$entity { $name="chicken" $pos="0    0  2" $spawntime="0.5" }
+	$entity { $name="chicken" $pos="-20 30  20" $spawntime="0.5" }
+	$entity { $name="chicken" $pos="15 -20  10" $spawntime="0.25" }
+}
+$entity
+{
+	$name="chicken"
+	$spawntime="2"
+	$pos="-300 20 -180"
+	$dir="1 -0.05 0"
+	$speed="20"
+	$respawnperiod="20"
+}
+$entity
+{
+	$name="chicken"
+	$spawntime="5"
+	$pos="-300 -10 -170"
+	$dir="1 -0.05 0"
+	$speed="23"
+	$respawnperiod="17"
+}
+$entity
+{
+	$name="chicken"
+	$spawntime="6"
+	$pos="-300 50 -210"
+	$dir="1 -0.05 0"
+	$speed="23"
+	$respawnperiod="10"
+}
+$entity
+{
+	$name="chicken"
+	$spawntime="8"
+	$pos="-300 50 -300"
+	$dir="1 -0.05 0"
+	$speed="22"
+	$respawnperiod="9"
+}
+$entity
+{
+	$name="chicken"
+	$spawntime="7"
+	$pos="-300 -10 -310"
+	$dir="1 -0.05 0"
+	$speed="19"
+	$respawnperiod="9"
+}
+$entity
+{
+	$name="superchicken"
+	$spawntime="3"
+	$pos="-300 -20 -300"
+	$dir="1 -0.05 0"
+	$speed="40"
+	$respawnperiod="15"
+}
+$group
+{
+	$spawntime = "8"
+	$pos = "-300 140 -150"
+	$dir = "1 -0.05 0"
+	//$aim = "0 0 0"
+	$speed = "22"
+	$respawnperiod="12"	// <0 = never respawn
+	
+	$entity { $name="chicken" $pos="0    0  2" $spawntime="0.5" }
+	$entity { $name="chicken" $pos="20  20  5" }
+	$entity { $name="racer02" $pos="20  0  -15" }
+}
+$group
+{
+	$spawntime = "8"
+	$pos = "-300 50 -120"
+	$dir = "1 -0.05 0"
+	//$aim = "0 0 0"
+	$speed = "25"
+	$respawnperiod="12"	// <0 = never respawn
+	
+	$entity { $name="racer01" $pos="0    0  8" $spawntime="0.5" }
+	$entity { $name="chicken" $pos="22  15  15" }
+}
+
+
+// EIERHAUFEN
+$entity
+{
+	$name="egg"
+	$spawntime="20"
+	$pos="-100 -150 -200"
+	$dir="0.1 0.1 -0.5"
+	$speed="1"
+	$respawnperiod="60"
+}
+$entity
+{
+	$name="egg"
+	$spawntime="60"
+	$pos="100 -30 -300"
+	$dir="0.1 0.1 -0.5"
+	$speed="1"
+	$respawnperiod="60"
+}
+
+// ASTRONAUT
+$entity
+{
+	$name="ballon"
+	$spawntime="10"
+	$pos="-60 -120 -300"
+	$dir="+0.5 1 0"
+	$speed="8"
+	$respawnperiod="20"
+}
+
+// ++++++++++++++ SUPERCHICKEN ++++++++++++++
+$entity
+{
+	$name="superchicken"
+	$spawntime="8"
+	$pos = "-300 10 -180"
+	$dir = "1 -0.05 0"
+	$speed="42"
+	$respawnperiod="40"
+}
+$entity
+{
+	$name="superchicken"
+	$spawntime="28"
+	$pos = "+300 -10 -180"
+	$dir = "-1 -0.05 0"
+	$speed="42"
+	$respawnperiod="40"
+}
+
+// ++++++++++++++ ENEMY-SHIP ++++++++++++++
+$entity
+{
+	$name="enemy-ship"
+	$spawntime="15"
+	$pos = "400 300 -400"
+	$aim = "-300 150 -400"
+	$speed="42"
+	$respawnperiod="80"
+}
+
+// ++++++++++++++ RAKETE ++++++++++++++
+$entity
+{
+	$name="komet"
+	$spawntime="15"
+	$pos = "400 -100 -200"
+	$aim = "-400 200 -400"
+	$speed="40"
+	$respawnperiod="80"
+}
+
+// ++++++++++++++ BOMB-CHICKEN ++++++++++++++
+$entity
+{
+	$name="bombe"
+	$spawntime="1"
+	$pos = "-300 +200 -100"
+	$aim = "0 0 0"
+	$speed="30"
+	$respawnperiod="25"
+}

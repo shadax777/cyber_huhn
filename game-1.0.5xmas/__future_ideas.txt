@@ -1,0 +1,55 @@
+
+//=========================================
+// shadax
+//=========================================
+
+* winter add-on:
+
+  - new default weapon: snowball
+    -> general: flying snowballs emit few snow flakes
+    -> hostile snowballs hitting player make him shake a bit like plasma shots
+    -> player's snowballs emit a lot of snow upon impacting enemies;
+       NOTE: EC_CheckDamageParticles() should NOT be called, because snowballs
+             can't cause debris.
+
+  - snow flakes should fall down from heaven directly in front of the client
+    (around the player; or at least in a half-sphere residing always in front
+     of client's direction)
+    we should make these snow flakes relatively large to give the illusion
+    of many snow flakes though having only a few active
+
+  - new weapon: ice-cannon (freezes enemies which will burst after 1-2 sec.)
+
+* superchicken: lose cape upn hit and fall down :)
+
+* implement accuracy bonus (this yields to a better competetion among players
+  in the whole big bad world)
+  -> print accuracy bonus at end of level (maybe insert between action + fade state)
+
+* item: time-freezer
+
+
+//=========================================
+// fps
+//=========================================
+
+* display date + time of high-scores on web and in launcher
+
+* option to adjust the ammount of particles (c.f. game opcode 
+  GAME_PARTICLE_PERCENTAGE)
+
+* shot models: animate to rotate around z-axis?
+
+  also: "dir" vectors seems to be inverted
+        (this is temporarily fixed in the game code, but no long-term solution)
+
+* implement a hidden commandline switch to enable fps-display
+
+//=========================================
+// modeller
+//=========================================
+
+* chickens with shawls, gloves and winter hats might look neat; also:
+  a chicken dressed like Santa Claus.
+  
+

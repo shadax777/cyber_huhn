@@ -1,0 +1,120 @@
+$level
+{
+	$title = "Jahrmarkt"	// not (yet) displayed
+	$bgm = "sounds/ingame.wav"	// music (will be looped)
+	$duration = "100.0"	// in seconds
+	$sky = "skysphere03"	// must be present or game code will abort
+}
+
+// planet
+$entity
+{
+	$name="p03"
+	$spawntime="0"		// spawn immediately after level starts
+	$pos="300 40 -400"
+	$dir="0 0 1"		// move direction - must NOT be set if $aim is set
+	$speed="0"		// moving speed; optional
+	$respawnperiod="-1"	// <0 = never respawn; optinal; if not set: never respawn
+	//$aim="200 40 -390"
+}
+
+
+//--------------------------------------------------
+
+$entity
+{
+	$name="chicken"
+	$spawntime="1"
+	$pos="400 -50 -120"
+	$dir="-1 0 0"
+	$speed="25"
+	$respawnperiod="8"
+}
+$entity
+{
+	$name="alien01"
+	$spawntime="3"
+	$pos="400 -50 -120"
+	$dir="-1 0 0"
+	$speed="25"
+	$respawnperiod="8"
+}
+$entity
+{
+	$name="chicken"
+	$spawntime="5"
+	$pos="400 -50 -120"
+	$dir="-1 0 0"
+	$speed="25"
+	$respawnperiod="8"
+}
+$entity
+{
+	$name="alien02"
+	$spawntime="7"
+	$pos="400 -50 -120"
+	$dir="-1 0 0"
+	$speed="25"
+	$respawnperiod="8"
+}
+
+//--------------------------------------------------
+
+$entity
+{
+	$name="chicken"
+	$spawntime="1"
+	$pos="-400 -10 -120"
+	$dir="1 0 0"
+	$speed="25"
+	$respawnperiod="4"
+}
+$entity
+{
+	$name="sonde"
+	$spawntime="3"
+	$pos="-400 -10 -120"
+	$dir="1 0 0"
+	$speed="25"
+	$respawnperiod="4"
+}
+
+//--------------------------------------------------
+$entity
+{
+	$name="racer02"
+	$spawntime="0"
+	$pos="300 30 -120"
+	$dir="-1 0 0"
+	$speed="30"
+	$respawnperiod="6"
+}
+$entity
+{
+	$name="komet"
+	$spawntime="3"
+	$pos="300 30 -120"
+	$dir="-1 0 0"
+	$speed="30"
+	$respawnperiod="6"
+}
+
+//--------------------------------------------------
+$entity
+{
+	$name="superchicken"
+	$spawntime="0"
+	$pos="-400 70 -120"
+	$dir="1 0 0"
+	$speed="35"
+	$respawnperiod="6"
+}
+$entity
+{
+	$name="astronaut"
+	$spawntime="3"
+	$pos="-400 70 -120"
+	$dir="1 0 0"
+	$speed="35"
+	$respawnperiod="6"
+}

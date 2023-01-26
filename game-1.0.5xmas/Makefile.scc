@@ -1,0 +1,64 @@
+# Makefile for the script compiler, using gcc/win32
+
+
+ifdef PWD	# crude way to distinguish a unix shell from MSDOS, but working for me
+  UNIX = 1
+else
+  UNIX = 0
+endif
+
+
+CC = gcc
+
+DEFINES = -DSC_COMPILER # as opposed to -DSC_GAME
+CFLAGS = -Wall -c $(DEFINES) -I ../
+
+OBJDIR = scc_objs
+
+OBJS = \
+	$(OBJDIR)/sc_compile.o \
+	$(OBJDIR)/sc_tok.o \
+	$(OBJDIR)/sc_io.o \
+	$(OBJDIR)/g_shared.o \
+	$(OBJDIR)/math3d.o \
+	$(OBJDIR)/math3d_support.o \
+	$(OBJDIR)/scc.o
+
+BIN = scc.exe
+
+all:	$(BIN)
+
+$(BIN):	$(OBJS)
+	$(CC) -o $@ $(OBJS)
+
+
+$(OBJDIR)/sc_compile.o:	sc_compile.c script.h sc_tok.h g_shared.h g_import.h
+	$(CC) $(CFLAGS) -o $@ $<
+
+$(OBJDIR)/sc_tok.o:	sc_tok.c sc_tok.h
+	$(CC) $(CFLAGS) -o $@ $<
+
+$(OBJDIR)/sc_io.o:	sc_io.c script.h
+	$(CC) $(CFLAGS) -o $@ $<
+
+$(OBJDIR)/g_shared.o:	g_shared.c g_shared.h
+	$(CC) $(CFLAGS) -o $@ $<
+
+$(OBJDIR)/math3d.o:	../math3d.c ../math3d.h
+	$(CC) $(CFLAGS) -o $@ $<
+
+$(OBJDIR)/math3d_support.o:	math3d_support.c math3d_support.h ../math3d.h
+	$(CC) $(CFLAGS) -o $@ $<
+
+$(OBJDIR)/scc.o:	scc.c script.h
+	$(CC) $(CFLAGS) -o $@ $<
+
+
+clean:
+ifdef PWD	# crude way to distinguish a unix shell from MSDOS, but working for me
+	rm -f $(OBJDIR)/*.o
+	rm -f $(BIN)
+else
+	if exist $(OBJDIR)\*.o del $(OBJDIR)\*.o
+	if exist $(BIN) del $(BIN)
+endif

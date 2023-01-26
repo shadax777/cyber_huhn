@@ -1,0 +1,268 @@
+$level
+{
+	$title = "X-Mas: Vorfreude"
+	$bgm = "sounds/ingame.wav"
+	$duration = "100.0"
+	$sky = "skysphere01"
+}
+
+$entity
+{
+	$name="p08"
+	$spawntime="0"
+	$pos="300 40 -400"
+	$dir="0 0 1"
+	$speed="0"
+	$respawnperiod="-1"
+	//$aim="200 40 -390"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="4"
+	$pos="-400.0 127.8 -128.6"
+	$aim="400.0 -181.6 -222.3"
+	$respawnperiod="11"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_racer02"
+	$spawntime="2"
+	$pos="-400.0 -76.0 -166.0"
+	$aim="400.0 -119.3 -163.9"
+	$respawnperiod="18"
+	$speed="50"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="9"
+	$pos="-400.0 77.3 -261.8"
+	$aim="400.0 184.2 -154.4"
+	$respawnperiod="10"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_racer01"
+	$spawntime="5"
+	$pos="-400.0 143.7 -215.7"
+	$aim="400.0 11.0 -233.3"
+	$respawnperiod="23"
+	$speed="50"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="3"
+	$pos="-400.0 62.5 -275.9"
+	$aim="400.0 -133.2 -119.2"
+	$respawnperiod="24"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_racer02"
+	$spawntime="5"
+	$pos="-400.0 161.0 -251.8"
+	$aim="400.0 3.9 -136.9"
+	$respawnperiod="16"
+	$speed="50"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="2"
+	$pos="-400.0 -180.6 -213.7"
+	$aim="400.0 110.1 -234.8"
+	$respawnperiod="11"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="0"
+	$pos="-400.0 -124.6 -130.5"
+	$aim="400.0 169.0 -285.1"
+	$respawnperiod="11"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="13"
+	$pos="-400.0 -180.1 -128.3"
+	$aim="400.0 54.2 -159.0"
+	$respawnperiod="12"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_racer02"
+	$spawntime="9"
+	$pos="-400.0 20.2 -269.0"
+	$aim="400.0 57.7 -208.3"
+	$respawnperiod="23"
+	$speed="50"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="11"
+	$pos="-400.0 -138.6 -252.7"
+	$aim="400.0 1.9 -132.3"
+	$respawnperiod="18"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="6"
+	$pos="-400.0 -44.1 -187.9"
+	$aim="400.0 -147.3 -164.0"
+	$respawnperiod="11"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="2"
+	$pos="-400.0 -168.6 -266.1"
+	$aim="400.0 186.7 -206.7"
+	$respawnperiod="22"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="2"
+	$pos="-400.0 73.0 -234.6"
+	$aim="400.0 62.9 -247.3"
+	$respawnperiod="11"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="3"
+	$pos="-400.0 82.4 -95.1"
+	$aim="400.0 151.1 -95.9"
+	$respawnperiod="21"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="5"
+	$pos="-400.0 138.5 -163.2"
+	$aim="400.0 138.0 -133.1"
+	$respawnperiod="19"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="5"
+	$pos="-400.0 87.8 -166.2"
+	$aim="400.0 188.3 -256.3"
+	$respawnperiod="10"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="2"
+	$pos="-400.0 0.6 -237.2"
+	$aim="400.0 -64.1 -124.0"
+	$respawnperiod="18"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="1"
+	$pos="-400.0 85.0 -89.3"
+	$aim="400.0 189.0 -264.0"
+	$respawnperiod="15"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="4"
+	$pos="-400.0 -185.4 -196.1"
+	$aim="400.0 -101.6 -145.2"
+	$respawnperiod="22"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="5"
+	$pos="-400.0 85.7 -186.9"
+	$aim="400.0 -84.0 -282.2"
+	$respawnperiod="15"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="9"
+	$pos="-400.0 16.8 -163.2"
+	$aim="400.0 192.2 -256.1"
+	$respawnperiod="18"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_santa"
+	$spawntime="8"
+	$pos="-400.0 2.4 -225.2"
+	$aim="400.0 -144.5 -166.5"
+	$respawnperiod="21"
+	$speed="65"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="8"
+	$pos="-400.0 111.5 -79.7"
+	$aim="400.0 187.1 -220.3"
+	$respawnperiod="23"
+	$speed="40"
+}
+
+$entity
+{
+	$name="xmas_chicken"
+	$spawntime="3"
+	$pos="-400.0 155.9 -188.2"
+	$aim="400.0 -184.8 -109.5"
+	$respawnperiod="24"
+	$speed="40"
+}

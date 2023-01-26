@@ -1,0 +1,31 @@
+comment, blindy copied or cut from the source code:
+
+  // just in case G_Free() was already called by G_EntitiesWorldClipping()
+  // since the sound moved outside the world. that call to G_Free() already
+  // explicitely caused the server to call entity_t->onSrvFree() (since
+  // this func ptr was != NULL). so, we do not wanna have G_Free() called
+  // twice on the same sound entity.
+  // NOTE, that it is not 100%'ly clean to check the server entity if its
+  // remove flag got set, because future versions of the server might
+  // immediately remove the entity without marking it for removal.
+
+
+
+  // We have to check if chicken's sound entity is still in use, because
+  // world clipping might have freed it before freeing the chicken.
+  // Without check, the chicken's sound entity will get freed a second
+  // time now.
+
+  /*
+  Another issue arises if the looping sound flies a bit faster, then
+  gets clipped before owner, but owner then still points to the freed sound
+  entity: if the game code allocates a new entity (and that entity is the
+  freed sound entity by chance!) between frames, the owner will
+  fatefully point to the new entity, which is totally mess!
+
+  Well, for the moment, the game code skips sound entities from freeing,
+  but this is not correct!
+
+  A better approach is to allow each entity to have 1 or 2 sound sources,
+  directly connected to the sound engine.
+  */
